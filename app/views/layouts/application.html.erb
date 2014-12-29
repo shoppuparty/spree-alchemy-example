@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SpreeAlchemyExample</title>
+  <%= render_meta_data %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -9,6 +9,8 @@
 <body>
 
 <%= yield %>
+<%= alchemy_preview_mode_code %>
+<%= render "alchemy/menubar" %>
 
 </body>
 </html>

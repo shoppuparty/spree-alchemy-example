@@ -42,3 +42,6 @@ gem 'spring',        group: :development
 gem 'spree', '2.4.2'
 gem 'spree_gateway', github: 'spree/spree_gateway', branch: '2-4-stable'
 gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '2-4-stable'
+
+gem 'alchemy_cms', github: 'shoppuparty/alchemy_cms', branch: 'master'
+gem 'spree_alchemy_spree_user', github: 'shoppuparty/spree_alchemy_spree_user', branch: 'master'
