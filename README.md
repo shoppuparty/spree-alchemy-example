@@ -1,8 +1,8 @@
 # Spree Alchemy Example
 
-A series of (Spree)[https://github.com/spree/spree] + (Alchemy)[https://github.com/AlchemyCMS/alchemy_cms] example applications. This branch (`master`) features the default installations of (Spree)[https://github.com/spree/spree/tree/2-4-stable] `2-4-stable` and (Alchemy)[https://github.com/AlchemyCMS/alchemy_cms] `master` as documented by their respective official documentation. There are custom patches to aid in the bridging of these two applications, which are denoted by a (`shoppuparty`)[https://github.com/shoppuparty] (that’s me) fork or extension.
+A series of [Spree](https://github.com/spree/spree) + [Alchemy](https://github.com/AlchemyCMS/alchemy_cms) example applications. This branch (`master`) features the default installations of [Spree](https://github.com/spree/spree/tree/2-4-stable) `2-4-stable` and [Alchemy](https://github.com/AlchemyCMS/alchemy_cms) `master` as documented by their respective official documentation. There are custom patches to aid in the bridging of these two applications, which are denoted by a [`shoppuparty`](https://github.com/shoppuparty) (that’s me) fork or extension.
 
-This application combines Spree with Alchemy and utilizes Spree’s default authentication (`spree_auth_devise`)[https://github.com/spree/spree_auth_devise] to unify authentication. Spree and Alchemy engines are both mounted to root (`'/'`) which means frontend and backend route namespaces are combined. Meaning, if you create a `/products` route in Alchemy it will collide with the out-of-the-box Spree frontend `/products` route and Spree’s `/products` route with render.
+This application combines Spree with Alchemy and utilizes Spree’s default authentication [`spree_auth_devise`](https://github.com/spree/spree_auth_devise) to unify authentication. Spree and Alchemy engines are both mounted to root (`'/'`) which means frontend and backend route namespaces are combined. Meaning, if you create a `/products` route in Alchemy it will collide with the out-of-the-box Spree frontend `/products` route and Spree’s `/products` route with render.
 
 However, this turns out to be not such a bad thing-- Spree and Alchemy do play well together in the way that the default route naming for the `/admin` namespace do not collide. With Alchemy mounted last, it acts as a catch-all for routes not defined by Spree. With that said, this is a Spree application enhanced by Alchemy. Eventually in your application you may want to consider phasing out Spree frontend entirely and have Alchemy handle all frontend routes. This of course will requires additional bridges to be built between both applications, probably best as Alchemy essences. Here is a good example of a product(s) and taxon(omy) bridge between the two as Alchemy essences ([`spree_alchemy`](https://github.com/tesserakt/spree_alchemy)).
 
@@ -60,12 +60,12 @@ Password [spree123]:
 
 Create the Devise initializer from above with the `[SECRET_KEY]` provided. Obviously, do not use the actual value for this project.
 
-[`config/initializers/devise.rb`]()
+[`config/initializers/devise.rb`](https://github.com/shoppuparty/spree-alchemy-example/blob/master/config/initializers/devise.rb#L1)
 
 
 Add the Alchemy gems
 
-[`Gemfile`]()
+[`Gemfile`](https://github.com/shoppuparty/spree-alchemy-example/blob/master/Gemfile#L46-L47)
 
 ```
 $ bundle install
@@ -73,7 +73,7 @@ $ bundle install
 
 Create Alchemy initializer, this is required before installing Alchemy. A `Alchemy.user_class_name` needs to be defined.
 
-[`config/initializers/alchemy.rb`]()
+[`config/initializers/alchemy.rb`](https://github.com/shoppuparty/spree-alchemy-example/blob/master/config/initializers/alchemy.rb#L1-L4)
 
 ```
 $ rake alchemy:install
@@ -83,12 +83,12 @@ Alchemy will create some files and copy over migrations. There will be a conflic
 
 Replace your layout view.
 
-[`app/views/layouts/application.html.erb`]()
+[`app/views/layouts/application.html.erb`](https://github.com/shoppuparty/spree-alchemy-example/blob/master/app/views/layouts/application.html.erb#L1-L16)
 
 
 Replace your routes file to define Alchemy to handle routing of root and non-Spree routes. Additionally, define a Devise route for `spree_auth_devise` to match the `logout` request method used by Alchemy.
 
-[`config/routes.rb`]()
+[`config/routes.rb`](https://github.com/shoppuparty/spree-alchemy-example/blob/master/config/routes.rb#L1-L13)
 
 ```
 # start your webserver to verify installations
