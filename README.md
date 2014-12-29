@@ -7,7 +7,6 @@ Switch from default Rails `sqlite3` database adapter to `pg` for all environment
 [`Gemfile`](https://github.com/shoppuparty/spree-alchemy-example/blob/feature/postgresql/Gemfile#L7-L8)
 
 ```
-
 # install pg adapter
 $ bundle install
 
@@ -16,5 +15,4 @@ $ rake db:setup
 
 # setup alchemy with new database
 $ rake alchemy:db:seed
-
 ```
