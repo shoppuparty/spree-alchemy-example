@@ -1,18 +1,7 @@
-# SQLite to PostgreSQL
+# Amazon Web Services (AWS) Elastic Beanstalk
 
-Switch from default Rails `sqlite3` database adapter to `pg` for all environments. `production` environment is setup for Amazon Elastic Beanstalk with Amazon Relational Database Service (RDS).
+Deployable to AWS Elastic Beanstalk `64bit Amazon Linux 2014.09 v1.0.9 running Ruby 2.1 (Puma)`.
 
-[`config/database.yml`](https://github.com/shoppuparty/spree-alchemy-example/blob/feature/postgresql/config/database.yml#L1-L23)
+# Includes
 
-[`Gemfile`](https://github.com/shoppuparty/spree-alchemy-example/blob/feature/postgresql/Gemfile#L7-L8)
-
-```
-# install pg adapter
-$ bundle install
-
-# setup postgresql databases and spree
-$ rake db:setup
-
-# setup alchemy with new database
-$ rake alchemy:db:seed
-```
+- [`feature/postgresql`](https://github.com/shoppuparty/spree-alchemy-example/tree/feature/postgresql)
