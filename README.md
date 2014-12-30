@@ -98,7 +98,6 @@ Replace your layout view.
 
 [`app/views/layouts/application.html.erb`](https://github.com/shoppuparty/spree-alchemy-example/blob/master/app/views/layouts/application.html.erb#L1-L16)
 
-
 Replace your routes file to define Alchemy to handle routing of root and non-Spree routes. Additionally, define a Devise route for `spree_auth_devise` to match the `logout` request method used by Alchemy.
 
 [`config/routes.rb`](https://github.com/shoppuparty/spree-alchemy-example/blob/master/config/routes.rb#L1-L13)
@@ -111,3 +110,7 @@ $ rails s
 Navigate to `http://localhost:3000` in your web-browser. You should arrive at a Rails error page, after Alchemy redirects you to `/index`. This is normal, Alchemy does not have an `index` to render since it is a fresh install. To fix this, navigate to `http://localhost:3000/admin` and you should be in Spree’s login view. Login with the admin credentials from the Spree installation and you should arrive at the Spree Orders page.
 
 The `spree_alchemy_spree_user` gem creates a link "Alchemy" in the Spree Admin menu, click that to jump into Alchemy’s Admin and once there, create the `index` page for your default language and publish that page, then `logout` to see the Alchemy rendered `http://localhost:3000/index`.
+
+You probably do not want to commit the product images created by the Spree seed, among other things.
+
+[`.gitignore`](https://github.com/shoppuparty/spree-alchemy-example/blob/master/.gitignore#L18-L21)
