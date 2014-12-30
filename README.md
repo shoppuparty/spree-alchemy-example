@@ -2,7 +2,7 @@
 
 Deployable to AWS Elastic Beanstalk `64bit Amazon Linux 2014.09 v1.0.9 running Ruby 2.1 (Puma)` with Postgres (RDS).
 
-[`Gemfile`]()
+[`Gemfile`](https://github.com/shoppuparty/spree-alchemy-example/blob/feature/aws-elastic-beanstalk/Gemfile#L51-L54)
 
 ```
 $ bundle install
@@ -21,8 +21,6 @@ Create `.env` with the following key-value pairs. Do not check this file into yo
 `.env`
 
 ```
-PORT=3000
-RACK_ENV=development
 SECRET_KEY_BASE=
 AWS_ACCESS_KEY_ID=
 AWS_SECRET_KEY=
@@ -32,22 +30,28 @@ FOG_REGION=
 ```
 
 Update your `.gitignore` to prevent committing your `.env` and manifest files created by asset compilation.
-[`.gitignore`]()
+
+[`.gitignore`](https://github.com/shoppuparty/spree-alchemy-example/blob/feature/aws-elastic-beanstalk/.gitignore#L23-L27)
 
 Create `Procfile` for `foreman` to load Puma configuration.
-[`Procfile`]()
+
+[`Procfile`](https://github.com/shoppuparty/spree-alchemy-example/blob/feature/aws-elastic-beanstalk/Procfile#L1)
 
 Create Puma configuration.
-[`config/puma.rb`]()
+
+[`config/puma.rb`](https://github.com/shoppuparty/spree-alchemy-example/blob/feature/aws-elastic-beanstalk/config/puma.rb#L1-L2)
 
 Create `asset_sync` initializer.
-[`config/initializers/asset_sync.rb`]()
+
+[`config/initializers/asset_sync.rb`](https://github.com/shoppuparty/spree-alchemy-example/blob/feature/aws-elastic-beanstalk/config/initializers/asset_sync.rb#L1-L28)
 
 Create `state_machine` initalizer to ignore `Instance method "open" is already defined in Object, use generic helper instead or set StateMachine::Machine.ignore_method_conflicts = true.` warning.
-[`config/initializers/state_machine.rb`]()
+
+[`config/initializers/state_machine.rb`](https://github.com/shoppuparty/spree-alchemy-example/blob/feature/aws-elastic-beanstalk/config/initializers/state_machine.rb#L1)
 
 Update `production` environment settings. This is important because it namespaces your assets based on the environment which gets carried over into your AWS S3 Bucket.
-[`config/environments/production.rb`]()
+
+[`config/environments/production.rb`](https://github.com/shoppuparty/spree-alchemy-example/blob/feature/aws-elastic-beanstalk/config/environments/production.rb#L79-L80)
 
 ```
 $ eb init
@@ -56,10 +60,12 @@ $ eb init
 $ eb setenv AWS_ACCESS_KEY_ID=[value] AWS_SECRET_KEY=[value] FOG_DIRECTORY=[value] FOG_REGION=[value]
 ```
 Create EB config file for options that are not environment dependent (within Elastic Beanstalk)
-[`.ebextensions/01_option_settings.config`]()
+
+[`.ebextensions/01_option_settings.config`](https://github.com/shoppuparty/spree-alchemy-example/blob/feature/aws-elastic-beanstalk/.ebextensions/01_option_settings.config#L1-L19)
 
 Create EB config file for server packages necessary for deployment
-[`.ebextensions/02_packages.config`]()
+
+[`.ebextensions/02_packages.config`](https://github.com/shoppuparty/spree-alchemy-example/blob/feature/aws-elastic-beanstalk/.ebextensions/02_packages.config#L1-L4)
 
 
 # Local Development
