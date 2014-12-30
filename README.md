@@ -57,7 +57,7 @@ Update `production` environment settings. This is important because it namespace
 $ eb init
 
 # set eb env to match (as needed)
-$ eb setenv AWS_ACCESS_KEY_ID=[value] AWS_SECRET_KEY=[value] FOG_DIRECTORY=[value] FOG_REGION=[value]
+$ eb setenv AWS_ACCESS_KEY_ID=[value] AWS_SECRET_KEY=[value] FOG_DIRECTORY=[value] FOG_REGION=[value] SECRET_KEY_BASE=[value]
 ```
 Create EB config file for options that are not environment dependent (within Elastic Beanstalk)
 
