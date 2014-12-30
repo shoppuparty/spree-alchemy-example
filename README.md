@@ -67,6 +67,29 @@ Create EB config file for server packages necessary for deployment
 
 [`.ebextensions/02_packages.config`](https://github.com/shoppuparty/spree-alchemy-example/blob/feature/aws-elastic-beanstalk/.ebextensions/02_packages.config#L1-L4)
 
+For my first deploy I had to SSH into my instance and run the initial `bundle install` and migrations manually.
+
+```
+$ eb ssh
+
+$ cd /var/app/ondeck
+
+$ bundle install
+
+$ rake db:reset
+
+$ rake alchemy:db:seed
+
+# disable force ssl in production environment
+$ rails c
+
+> Spree::Config.allow_ssl_in_production = false
+> exit
+
+$ exit
+
+$ eb deploy
+```
 
 # Local Development
 
