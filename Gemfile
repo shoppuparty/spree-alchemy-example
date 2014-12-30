@@ -28,11 +28,6 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
-# production deployment and closer reproduction of production environment locally in development
-gem 'foreman', group: :development
-gem 'puma', group: :development
-gem 'asset_sync', group: :development
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -52,3 +47,8 @@ gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '2-4-stable'
 
 gem 'alchemy_cms', github: 'shoppuparty/alchemy_cms', branch: 'master'
 gem 'spree_alchemy_spree_user', github: 'shoppuparty/spree_alchemy_spree_user', branch: 'master'
+
+# production deployment and closer reproduction of production environment locally in development
+gem 'puma'
+gem 'foreman'
+gem 'asset_sync'

@@ -16,7 +16,17 @@
 /tmp
 
 .DS_Store
-.env
 
 # Ignore Spree
 /public/spree/*
+
+.env
+
+# Manifests
+/public/production/**/*
+!/public/production/assets/manifest*.json
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
