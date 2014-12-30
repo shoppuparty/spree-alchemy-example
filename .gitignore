@@ -17,3 +17,6 @@
 
 .DS_Store
 .env
+
+# Ignore Spree
+/public/spree/*
